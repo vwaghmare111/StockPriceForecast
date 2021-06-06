@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Stock Prediction
+        </title>
+        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <head>
+    
+    <body>
+        <form method='POST'>
+            <input type = "text" name="stock" placeholder="Enter Yahoo Stock Ticker"/>
+            <input type = "submit" value="Submit"/>
+        </form>        
+        <p>
+            Showing data for stock: {{stockName}}
+            <br>
+            Train MAE: {{train_mae}}
+            <br>
+            Test MAE: {{test_mae}}
+        </p>
+                
+        <h3>Test data prediction and Forecast plot</h3>
+        <img src={{url_for('plots')}} alt="" width="500" height="400" id="tp"/>
+        <br>
+               
+        <h3>Forecast with lower and upper bound</h3>
+        {% for table in tables %}           
+            {{ table|safe }}
+        {% endfor %}
+        
+    </body>
+</html>
