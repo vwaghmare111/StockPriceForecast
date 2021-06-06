@@ -11,4 +11,4 @@ matplotlib>=3.0.3
 pandas>=1.2.4
 yfinance==0.1.59
 statsmodels==0.12.2
-PIL==8.2.0
+Pillow==8.2.0
